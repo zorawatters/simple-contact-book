@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+const mongoPass = require('m_connect.js');
 require('./controllers/passportStrategies');
 
 const app = express();
@@ -25,7 +26,7 @@ app.use('/addressbook', abRoute);
 
 //connect to mongodb atlas
 //not worried about password rn
-mongoose.connect('mongodb+srv://zora:strvtest@users.w0ymb.mongodb.net/users?retryWrites=true&w=majority',
+mongoose.connect(mongoPass.connect,
     { useNewUrlParser: true, useUnifiedTopology: true });
 //set database variable
 const db = mongoose.connection;
