@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-const mongoPass = require('m_connect.js');
+const mongoPass = require('./m_connect.js');
 require('./controllers/passportStrategies');
 
 const app = express();
